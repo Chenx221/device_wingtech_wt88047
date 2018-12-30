@@ -80,5 +80,10 @@ BOARD_SEPOLICY_DIRS += \
 TARGET_LD_SHIM_LIBS += \
     /system/vendor/lib/libmmcamera2_imglib_modules.so|libshim_camera.so
 
+# TWRP
+ifeq ($(WITH_TWRP),true)
+include $(DEVICE_PATH)/twrp.mk
+endif
+
 # inherit from the proprietary version
 include vendor/wingtech/wt88047/BoardConfigVendor.mk
